@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="landing-container">
+        <div class="content-box">
+            <h1>🎬 Welcome to My IMDb App</h1>
+            <p>Hello, I'm <strong>Muthiah Hasna</strong> — Ini adalah project pertama saya menggunakan REST API.</p>
+            <p>Click the button below to explore the most popular movies right now!</p>
+            <a href="{{ url_for('movies') }}" class="btn">Browse Movies</a>
+        </div>
+    </div>
+</body>
+</html>
