@@ -2,17 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Movie App</title>
+    <title>AnaaMovie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-    <div class="landing-container">
-        <div class="content-box">
-            <h1>🎬 Welcome to My IMDb App</h1>
-            <p>Hello, I'm <strong>Muthiah Hasna</strong> — Ini adalah project pertama saya menggunakan REST API.</p>
-            <p>Click the button below to explore the most popular movies right now!</p>
-            <a href="{{ url_for('movies') }}" class="btn">Browse Movies</a>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="/">AnaaMovie</a>
+   
+</nav>
+
+<!-- Profil -->
+<div class="profile-section">
+    <h2>👩🏻‍💻 Muthiah Hasna</h2>
+    <p>Selamat datang di AnaaMovie! Ini adalah project pertama saya menggunakan REST API untuk menampilkan film populer dan pencarian film berdasarkan judul atau genre.</p>
+</div>
+
+<!-- Daftar Film -->
+<div class="container">
+        <h1>🔥 Film Populer 🔥</h1>
+
+        {% for movie in movies %}
+        <div class="movie-card">
+            <img src="{{ movie.primaryImage }}" alt="{{ movie.primaryTitle }}">
+            <div class="movie-info">
+                <h2>{{ movie.primaryTitle }}</h2>
+                <p><strong>Genre:</strong> {{ movie.genres | join(', ') }}</p>
+                <p><strong>Rating:</strong> ⭐ {{ movie.averageRating }} ({{ movie.numVotes }} votes)</p>
+                <p><strong>Release:</strong> {{ movie.releaseDate }}</p>
+                <a href="{{ movie.url }}" target="_blank" class="btn">View on IMDb</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
+</div>
+
 </body>
 </html>
