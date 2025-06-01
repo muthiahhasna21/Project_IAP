@@ -1,18 +1,17 @@
-/* Palet warna lembut dan feminin + cewekable aesthetic */
+/* Tema warna merah, putih, dan pink */
 :root {
-    --background: #e5989b;         /* Very soft pink background */
-    --card-bg: #FFD6EC;            /* Lighter pink */
-    --card-footer-bg: #F4B9D8;     /* Soft plum */
-    --navbar-bg: #6d6875;          /* Pale fairy pink */
-    --accent: #C3E0DC;             /* Muted mint */
-    --highlight: #FADADD;          /* Light blush */
-    --text-dark: #5C3A4E;          /* Softer plum */
+    --background: #FFF0F5;         /* Light pink background */
+    --card-bg: #FFE4E1;            /* Misty rose (pinkish white) */
+    --card-footer-bg: #F08080;     /* Light coral (merah muda) */
+    --navbar-bg: #FFB6C1;          /* Light pink */
+    --accent: #DC143C;             /* Crimson (merah) */
+    --highlight: #FFC0CB;          /* Pink */
+    --text-dark: #8B0000;          /* Dark red */
     --text-light: #ffffff;
-    --title-color: #B04E8F;        /* Soft orchid */
-    --shadow: rgba(176, 78, 143, 0.15);
+    --title-color: #C71585;        /* Medium violet red */
+    --shadow: rgba(220, 20, 60, 0.15); /* Soft crimson shadow */
 }
 
-/* Body */
 body {
     background-color: var(--background);
     color: var(--text-dark);
@@ -23,24 +22,24 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
 .navbar {
     background-color: var(--navbar-bg);
     box-shadow: 0 2px 10px var(--shadow);
 }
 
 .navbar-brand {
+    font-family: 'Poppins', sans-serif; /* Tambahkan font berbeda */
+    font-weight: 700;                    /* Tebal */
+    font-size: 2rem;                     /* Lebih besar dari teks biasa */
     color: var(--title-color);
-    font-weight: bold;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px var(--shadow);
 }
 
 .navbar-brand:hover {
     color: var(--accent);
 }
 
-/* Card Styles */
 .card {
     background-color: var(--card-bg);
     color: var(--text-dark);
@@ -75,11 +74,10 @@ body {
     padding: 0.75rem 1rem;
 }
 
-/* Tombol */
 .btn-warning {
     background-color: var(--accent);
     border-color: var(--accent);
-    color: var(--text-dark);
+    color: var(--text-light);
     font-weight: bold;
     border-radius: 0.6rem;
     padding: 0.5rem 1.2rem;
@@ -92,8 +90,8 @@ body {
 }
 
 .btn-pink {
-    background-color: #F4B9D8;
-    color: white;
+    background-color: var(--card-footer-bg);
+    color: var(--text-light);
     border: none;
     padding: 0.5rem 1rem;
     font-weight: bold;
@@ -102,11 +100,10 @@ body {
 }
 
 .btn-pink:hover {
-    background-color: #B04E8F;
-    color: #FFEFF7;
+    background-color: var(--title-color);
+    color: var(--background);
 }
 
-/* Modal */
 .modal-content {
     background-color: var(--navbar-bg);
     color: var(--text-dark);
@@ -114,27 +111,23 @@ body {
     box-shadow: 0 4px 20px var(--shadow);
 }
 
-/* Gambar */
 .card-img-top {
     object-fit: cover;
     height: 280px;
     border-radius: 1.2rem 1.2rem 0 0;
 }
 
-/* Headings */
-h1, h2, h5 {
-    color: var(--text-light);
+h1, h2 {
+    color: var(--title-color);
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 0.75rem;
 }
 
-/* Animasi halus */
 a, button, .card-title {
     transition: all 0.3s ease;
 }
 
-/* Tambahan kecil yang estetik */
 hr {
     border: none;
     height: 2px;
@@ -147,4 +140,65 @@ hr {
 .container {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+.btn-outline-pink {
+    border: 2px solid var(--title-color);
+    background-color: transparent;
+    color: var(--title-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--highlight);
+    color: var(--text-dark);
+}
+.hero-section {
+    position: relative;
+    background-image: url('../static/img/bgg.jpg'); /* Ganti dengan foto kamu */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    z-index: 1;
+}
+
+
+.hero-content-left {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero-content-left h1 {
+    margin-bottom: 0.5rem;
+    color: #ffffff; /* Putih terang */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Bayangan agar lebih jelas */
+}
+
+.social-icons {
+    margin-top: 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FFD6EC; /* Warna pink saat hover */
 }
