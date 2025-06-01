@@ -21,33 +21,14 @@ def home():
 def movies():
     url = "https://imdb236.p.rapidapi.com/api/imdb/most-popular-movies"
     headers = {
-        "x-rapidapi-key": "fe1fafe432msh517b2ce221ff25ap135b06jsne7da14e55876",
+        "x-rapidapi-key": "c9407e0263msh9289678d2a98828p120d30jsna3a30640cdfe",
         "x-rapidapi-host": "imdb236.p.rapidapi.com"
     }
 
     response = requests.get(url, headers=headers)
-    data = response.json()
+    all_movies = response.json()  # langsung list
 
-    # Pastikan data yang dipassing ke template adalah list film
-    movies = response.json() # tergantung struktur JSON response
-    return render_template('index.html', movies=movies)
-
-@app.route('/genres')
-def genres():
-    url = "https://imdb236.p.rapidapi.com/api/imdb/genres"
-    headers = {
-        "x-rapidapi-key": "fe1fafe432msh517b2ce221ff25ap135b06jsne7da14e55876",
-        "x-rapidapi-host": "imdb236.p.rapidapi.com"
-    }
-
-    response = requests.get(url, headers=headers)
-    data = response.json()
-    genre_list = response.json()  # pastikan ini sesuai struktur JSON API kamu
-
-    return render_template("genres.html", genres=genre_list)
-
-
-
+    return render_template('mostpopuler.html', movies=all_movies)
 
 if __name__ == '__main__':
     app.run(debug=True)
